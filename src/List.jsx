@@ -92,6 +92,7 @@ function List() {
       email: "oliviaanderson@example.com"
     }
   ];
+  const lowGradeStudents = students.filter(student => student.grade == 'C');
   return (
     <>
       <ol>
@@ -101,32 +102,32 @@ function List() {
           )
         }
       </ol>
+      <br />
       <div className="table">
-        <table>
-          <tbody>
-            {
-              students.map(student =>
-                <tr key={student.id}>
-                  <td>{student.name}</td>
-                  <td>{student.age}</td>
-                  <td>
-                    {student.gender}
-                  </td>
-                  <td>
-                    {student.course}
-                  </td>
-                  <td>
-                    {student.grade}
-                  </td>
-                  <td>
-                    {student.email}
-                  </td>
-                </tr>
-              )
-            }
+        <table className="min-w-full divide-y divide-gray-200 border w-full">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Age</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gender</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Course</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Grade</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {lowGradeStudents.map(student => (
+              <tr key={student.id}>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{student.name}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.age}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.gender}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.course}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.grade}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{student.email}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
-
       </div>
     </>
   );
