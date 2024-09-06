@@ -3,6 +3,7 @@ import Button from "./Button.jsx"
 import Student from "./Student.jsx";
 import Greeting from "./Greeting.jsx";
 import List from "./List.jsx"
+import './index.css'; // Ensure this is imported
 function App() {
   return (
     <>
