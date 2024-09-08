@@ -4,6 +4,7 @@ import Student from "./Student.jsx";
 import Greeting from "./Greeting.jsx";
 import List from "./List.jsx"
 import ListObjects from "./ListObjects.jsx";
+import ReactHooks from "./reactHooks.jsx";
 function App() {
   const fruits = [
     {
@@ -63,6 +64,8 @@ function App() {
 
   return (
     <>
+      <ReactHooks></ReactHooks>
+      <hr />
       <ListObjects data={fruits} category="fruits" />
       <hr />
       <ListObjects data={vegetables} category="vegetables" />
